@@ -1,0 +1,17 @@
+# /bin/bash
+#
+# CBU wrapper for dcm2bids. Takes care of adding code to path and setting the
+# correct python / PYTHONPATH. We also append the anonymizer input with the
+# correct pydeface.py, since getting this working can be a little hairy.
+#
+# 2017-05-25 J Carlin
+
+export PATH=/imaging/local/software/dcm2niix/bin:$PATH
+export PATH=/imaging/local/software/fsl/fsl64/fsl-5.0.3/fsl/bin/:$PATH
+export PATH=/imaging/local/software/anaconda/2.4.1/2/envs/heudiconv/bin/:$PATH
+export PATH=/home/jc01/python/dcm2bids/scripts:$PATH
+export PYTHONPATH=/home/jc01/python/dcm2bids
+export FSLOUTPUTTYPE=NIFTI_GZ
+
+# bash voodoo for pass any and all input arguments on
+dcm2bids "$@" -a /imaging/local/software/anaconda/2.4.1/2/envs/heudiconv/bin/pydeface.py
