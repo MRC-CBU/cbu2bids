@@ -9,7 +9,7 @@ flag is being set for you automatically).
 
 An example config file that has been used to share CBU data on openfmri (see
 [this repo](https://github.com/jooh/facedistid_analysis)) can be found under
-(examples)[examples].
+[examples](examples).
 
 # Problems, concerns, queries?
 Open an issue, or contact Johan Carlin.
