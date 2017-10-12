@@ -15,7 +15,7 @@ An example config file that has been used to share CBU data on openfmri (see
 
 Just do something like `set path = ( $path /imaging/local/software/cbu2bids )`
 to get the shell script on your system path. Confirm that everything works with
-`cbu2bids -h`. If you get a nice help prompt, you are up and running.
+`cbu2bids -h -o test`. If you get a nice help prompt, you are up and running.
 
 # Problems, concerns, queries?
 Open an issue, or contact Johan Carlin.
