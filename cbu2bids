@@ -13,5 +13,22 @@ export PATH=/imaging/local/software/dcm2bids/scripts:$PATH
 export PYTHONPATH=/imaging/local/software/dcm2bids
 export FSLOUTPUTTYPE=NIFTI_GZ
 
+# need to make sure outputdir is set to avoid attempts to write to script dir
+# (which will be cwd in dcm2bids below)
+validcheck=0
+for var in "$@"
+do
+    if [[ $var == -o ]]; then
+        validcheck=1
+    fi
+    if [[ $var == --outputdir ]]; then
+        validcheck=1
+    fi
+done
+if [ $validcheck == 0 ]; then
+    echo "ERROR: must specify outputdir by setting -o or --outputdir flag"
+    exit 1
+fi
+
 # bash voodoo for pass any and all input arguments on
 dcm2bids "$@" -a /imaging/local/software/anaconda/2.4.1/2/envs/heudiconv/bin/pydeface.py
