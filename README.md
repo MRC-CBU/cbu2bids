@@ -1,3 +1,7 @@
+# DEPRECATED
+This method for accessing dcm2bids is no longer supported. Please access dcm2bids
+through [neuroconda](https://github.com/jooh/neuroconda) instead.
+
 # cbu2bids
 DICOM to BIDS conversion for MRC CBU (using Johan Carlin's fork of
 [dcm2bids](https://github.com/jooh/Dcm2Bids)).
